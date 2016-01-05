@@ -1,0 +1,242 @@
+Ôªø/**
+ *@author Marie-Lyse Briffaud
+ *@since 27/10/2015
+ *@source https://philipwalton.github.io/solved-by-flexbox/demos/holy-grail/
+ */
+
+ /*le layout est mobile-first, par d√©faut l'affichage se fait sur une colonne*/
+
+.HolyGrail,
+.HolyGrail-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.HolyGrail-nav {
+  order: -1;
+}
+
+
+
+/*on cache la colonne de droite sur les tailles d'Ècran intermÈdiaires */
+@media (min-width:600px) and (max-width: 1024px) {
+aside {display:none;}
+}
+
+/*affichage en plusieurs colonnes sur les Ècrans suffisamment grands*/ 
+
+@media (min-width: 600px) {
+
+	.HolyGrail {
+		display: flex;
+		height: 100%;/* pour compatibilite avec ie11*/
+		flex-direction: column;
+	}
+
+	.HolyGrail-body {
+		display: flex;
+		flex-direction: row;
+		flex: 1 0 auto;/* flex:1 ne marche pas avec ie11*/
+	}
+	
+	.HolyGrail-content {
+		flex: 1;
+	}
+	
+	.HolyGrail-nav, .HolyGrail-ads {
+		/* 12em is the width of the columns */
+		flex: 0 0 18em;
+	}
+
+	.HolyGrail-nav {
+		/* put the nav on the left */
+		order: -1;
+	}
+
+}
+
+
+@font-face {
+  font-family: 'Comfortaa';
+  font-style: normal;
+  font-weight: 400;
+  src: 
+    local('Comfortaa'), 
+    local('Comfortaa-Regular'),
+    url(http://fonts.gstatic.com/s/comfortaa/v7/qLBu5CQmSMt1H43OiWJ77VtXRa8TVwTICgirnJhmVJw.woff2) format('woff2');
+}
+
+html {
+  height:100%;/* pour compatibilite avec ie11*/
+}
+
+body {
+  font-family: 'Comfortaa', cursive;text-align:justify;
+  font-size: 14px;
+  margin: 0;
+  color: #333;
+
+  }
+
+header, footer {
+  background-color : #eaeaea;
+}
+
+header{
+  /*background: url(/assets/img/rayure.png) repeat;*/
+  border-bottom: 1px solid black;
+}           
+
+header img {
+  margin-left: 15px;
+}
+
+/*******************************************************************************
+ menu de gauche
+*******************************************************************************/
+#gauche{
+  background-image: url(/assets/img/colonneG.png);background-repeat: repeat-y;
+  padding-bottom:20px;
+  padding-left:15px;
+}
+#gauche a{
+  color:black;
+}
+
+
+/*boutons du menu de gauche*/
+.cadre {
+  border-radius: 15px;
+  box-shadow: 0px 2px 5px #000, 0px -2px 5px #FFF;
+  background-color: #c5c5c5;
+  height:80px;
+  margin-top:20px;
+  padding: 8px;
+  padding-left:15px;  
+  font-size:18px;
+  box-sizing: border-box;
+}
+
+.cadre img{
+  margin-right:5px;
+  vertical-align: middle;
+
+}
+
+/*rend la div enti√®re cliquable */
+.cadre a{
+  display:block;
+  width:100%;
+  height:100%;
+  text-decoration: none;
+}
+
+/*change l'image au survol, on cache celle de la balise img pour faire apparaitre celle du background*/
+.cadre a:hover img {
+  visibility: hidden;
+}
+
+#conseil a {
+  background: url("/assets/img/picto/pict_conseil_s.png") no-repeat;
+}
+
+#formation a {
+  background: url("/assets/img/picto/pict_formation_s.png") no-repeat;
+}
+
+#developpement a {
+  background: url("/assets/img/picto/pict_developpement_s.png") no-repeat;
+}
+
+#support a {
+  background: url("/assets/img/picto/pict_support_s.png") no-repeat;
+}
+
+/*******************************************************************************
+ contenu
+ ******************************************************************************/
+.HolyGrail-content{
+  padding:20px;
+
+}
+
+.HolyGrail-content a:link {color:#009AA1;}  
+.HolyGrail-content a:visited {color:#009AA1;}  
+.HolyGrail-content a:hover {color:#009AA1;}  
+.HolyGrail-content a:active {color:#009AA1;}  
+
+h1{
+  text-align: center; 
+  font-variant : small-caps;
+}
+
+h2{
+  font-variant : small-caps;
+}
+
+h3{
+  font-size:1.5em;
+}
+
+/*******************************************************************************
+ cadre de droite
+*******************************************************************************/
+aside{
+  color: #FFF;
+  background-color: #8accc8;
+  padding:20px;
+}
+
+@media (min-width: 1024px) {
+  aside{  
+    margin-right:15px;
+	width:100%; 
+  }
+}
+
+/*******************************************************************************
+ footer
+*******************************************************************************/
+footer {
+  text-align:center;
+}
+
+#reseau a{
+  text-decoration:none;
+}
+
+#reseau ul, nav ul {
+  list-style-type : none; /*puces non affich√©es*/
+  padding-left:0px;
+}
+
+#reseau ul li, nav ul li { 
+  display : inline;/*liste en ligne*/
+}
+
+#reseau li, nav li{
+  padding : 0 0.5em;/*espacement des puces*/
+} 
+
+#reseau{
+  background-color:#c5c5c5;
+  border-top: 1px solid black;
+  padding-bottom:5px;
+}
+
+nav a, nav a:hover{
+  color:black;
+}
+
+/*******************************************************************************
+ divers
+*******************************************************************************/
+
+/*centre une vid√©o, image ...*/
+.youtube {text-align:center; width:100%;margin-top:10px;}
+
+/*******************************************************************************
+ formulaire de contact
+*******************************************************************************/
+
+

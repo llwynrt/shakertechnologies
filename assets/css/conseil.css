@@ -1,0 +1,12 @@
+#gauche{
+  background-image: url(/assets/img/colonneG.png);background-repeat: repeat-y;
+}
+
+#conseil img {
+  visibility: hidden;
+}
+
+aside{
+  background-color: #8accc8;
+}
+

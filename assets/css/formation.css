@@ -1,0 +1,12 @@
+#gauche{
+  background-image: url(/assets/img/colonneGFormation.png);background-repeat: repeat-y;
+}
+
+#formation img {
+  visibility: hidden;
+}
+
+aside{
+  background-color: #f7b44c;
+}
+

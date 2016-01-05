@@ -1,0 +1,11 @@
+#gauche{
+  background-image: url(/assets/img/colonneGSupport.png);background-repeat: repeat-y;
+}
+
+#support img {
+  visibility: hidden;
+}
+
+aside{
+  background-color: #b5d254;
+}

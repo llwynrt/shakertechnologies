@@ -1,0 +1,9 @@
+h2{
+  font-variant : small-caps;
+  text-decoration: underline;
+}
+
+/*affichage des photos d'identité*/
+.pic {width:125px;margin:20px;margin-bottom:0px;}
+.oddPic {float:left;}
+.evenPic{float:right;}
